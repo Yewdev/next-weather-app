@@ -11,10 +11,9 @@ const Home: NextPage<IWeatherProps> = ({ weatherResponse }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [weatherData, setWeatherData] = useState(weatherResponse);
   useEffect(() => {
-    const apiKey = process.env.API_KEY;
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`
       )
       .then((response) => {
         toast.dismiss();
