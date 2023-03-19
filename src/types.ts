@@ -1,9 +1,3 @@
-export interface IWeatherResponse {
-  id: number;
-  name: string;
-  weather: IWeather;
-  main: IMain;
-}
 interface IWeather {
   main: string;
   description: string;
@@ -14,4 +8,14 @@ interface IMain {
   temp_min: number;
   temp_max: number;
   humidity: number;
+}
+
+export interface IWeatherResponse {
+  id: number;
+  name: string;
+  weather: IWeather;
+  main: IMain;
+}
+export interface IWeatherProps {
+  weatherResponse: IWeatherResponse;
 }
